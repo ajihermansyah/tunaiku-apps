@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Beego</title>
+</head>
+
+<body>
+    <h1 class="logo">Insert Data Stock Tunaiku</h1>
+    {{ if .isValid }}
+{{ else }}
+<div class="summary-errors alert alert-danger alert-dismissible">
+    <p>Errors list below: </p>
+    <ul>
+        {{ range $key, $value := .Errors }}
+          <li><strong><font color="red">{{ $value }}</font></strong></li>
+        {{ end }}          
+    </ul>
+</div>
+{{ end }}
+
+<a href="/stock">List Stock</a>
+
+   <form action="/stock/input-data" method="POST">
+    <table >
+        <tr>
+          <td> Date : </td>
+          <td><input type="text" name="date" placeholder="mm/dd/yyyy" /></td>
+        </tr>
+        <tr>
+          <td> Open : </td>
+          <td><input type="number" name="open" placeholder="$110" autocomplete="off"/></td>
+        </tr>
+        <tr>
+          <td> High : </td>
+          <td><input type="number" name="high" placeholder="$111" autocomplete="off"/></td>
+        </tr>
+        <tr>
+          <td> Low : </td>
+          <td><input type="number" name="low" placeholder="$99" autocomplete="off"/></td>
+        </tr>
+        <tr>
+          <td> Close : </td>
+          <td> <input type="number" name="close" placeholder="$100" autocomplete="off"/></td>
+        </tr>
+      </table>
+       <div class="modal-footer">
+        <button type="submit"><i class="icon md-floppy"></i>Save</span></button>
+        <button type="reset" value="Reset">Reset</button>
+      </div>
+    </form>
+</body>
+</html>

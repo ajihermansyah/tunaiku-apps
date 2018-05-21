@@ -1,0 +1,49 @@
+<a href="/stock/input-data">New Stock</a>
+<a href="/stock/calculate-stock">Calculate Stocks</a>
+
+
+<h1 class="logo">Data Stocks</h1>
+<table border="1">
+  <tr>
+    <td><b>Date</b></td>
+    <td><b>Open</b></td>
+    <td><b>High</b></td>
+    <td><b>Low</b></td>
+    <td><b>Close</b></td>
+  </tr>
+  {{range $stock := .Stock}}
+  <tr>
+    <td>{{$stock.DateStr}}</td>
+    <td>${{$stock.Open}}</td>
+    <td>${{$stock.High}}</td>
+    <td>${{$stock.Low}}</td>
+    <td>${{$stock.Close}}</td>
+  </tr>
+    {{end}}
+
+</table>
+
+
+<h1 class="logo">Calculate Data Stock</h1>
+<table border="1">
+  <tr>
+    <td><b>Date</b></td>
+    <td><b>Open</b></td>
+    <td><b>High</b></td>
+    <td><b>Low</b></td>
+    <td><b>Close</b></td>
+    <td><b>Action</b></td>
+  </tr>
+  {{range $stocks := .StockCalculate}}
+  <tr>
+    <td>{{$stocks.DateStr}}</td>
+    <td>${{$stocks.Open}}</td>
+    <td>${{$stocks.High}}</td>
+    <td>${{$stocks.Low}}</td>
+    <td>${{$stocks.Close}}</td>
+    <td>{{$stocks.Action}}</td>
+  </tr>
+    {{end}}
+</table>
+
+<p> Maximum profit can earned by buying on date <b>{{.BestDateBuy}}</b>, selling on date <b>{{.BestDateSell}}</b> </p>
