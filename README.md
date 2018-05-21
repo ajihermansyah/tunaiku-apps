@@ -30,17 +30,17 @@ port = 8080
 
 
 #### Database Configuration
-appname = tunaiku
-httpport = 8080
-runmode = dev
-copyrequestbody = true
-sessionon = true
+$ appname = tunaiku
+$ httpport = 8080
+$ runmode = dev
+$ copyrequestbody = true
+$ sessionon = true
 
-mgo_host=127.0.0.1:27017
-mgo_database=tunaiku
-mgo_username=
-mgo_password=
-mgo_host_seeder="localhost:27017"
+$ mgo_host=127.0.0.1:27017
+$ mgo_database=tunaiku
+$ mgo_username=
+$ mgo_password=
+$ mgo_host_seeder="localhost:27017"
 
 
 #### Run APPS
